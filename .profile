@@ -1,0 +1,5 @@
+#
+# ~/.profile
+#
+
+umask 007
