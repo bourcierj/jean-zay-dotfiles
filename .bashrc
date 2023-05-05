@@ -8,6 +8,8 @@ export LC_ALL=en_US.UTF-8
 # set the history time format
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
+# Force the Python stdout and stderr streams to be unbuffered
+export PYTHONUNBUFFERED=1
 
 ## Aliases
 
