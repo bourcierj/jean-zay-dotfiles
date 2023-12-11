@@ -12,15 +12,17 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 export PYTHONUNBUFFERED=1
 
 ## Aliases
+# source: https://github.com/stas00/ml-engineering/blob/master/slurm/users.md
 
 ### list slurm jobs with long format with 50 characters showing for job names
-alias squeuelj='squeue --format "%.18i %.9P %.50j %.8u %.8T %.10M %.9l %.6D %R"'
-alias squeuel=squeuelj
-### list slurm jobs with their expected start time insteal of run time
-alias squeues='squeue --start'
-
-### cancel all my jobs
-alias scancel-me="squeue --me -h -o '%i' | xargs scancel"
+# list all Slurm jobs on cluster
+alias sjobs='squeue -o "%.18i %9P %26j %.8T %.10M %.8l %.6D %.20S %R'
+# list my jobs
+alias myjobs='squeue --me -o "%.18i %9P %26j %.8T %.10M %.8l %.6D %.20S %R"'
+# list my pending jobs
+alias myjobs-pending='squeue --me --start'
+# list states of partitions and their nodes
+alias partitions='sinfo -o "%.7P %.5a %.16F"'
 
 ### recursively touch all files in the personal and common $SCRATCH spaces
 function touch-all-files-in-scratch () {
