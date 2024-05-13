@@ -22,3 +22,11 @@ function touch-all-files-in-scratch () {
 		find "${dir}" -type f -print0 | xargs -0 touch -a
 	done
 }
+
+
+function sbatch-v100() {
+	sbatch --account="${SLURM_ACCOUNT}@v100" --mail-user="${SLURM_MAIL_USER}" "$@"
+}
+function sbatch-a100() {
+	sbatch --account="${SLURM_ACCOUNT}@a100" --mail-user="${SLURM_MAIL_USER}" "$@"
+}
