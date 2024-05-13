@@ -18,3 +18,9 @@ The `scripts` directory contains useful scripts to setup a work environment.
 Example slurm jobs scripts are in `scripts/examples`
 
 * Sync an AWS S3 bucket to your project `$SCRATCH`: `aws-s3-sync.slurm.sh`
+
+
+## Todo
+
+* [] Add script to install pipx
+* [] Add script to install wandb
