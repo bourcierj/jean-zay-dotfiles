@@ -30,3 +30,24 @@ function sbatch-v100() {
 function sbatch-a100() {
 	sbatch --account="${SLURM_ACCOUNT}@a100" --mail-user="${SLURM_MAIL_USER}" "$@"
 }
+
+
+function wandb_sync_offline_runs() {
+    root_dir="$1"
+    find $root_dir -type d -name 'offline-run*' -print0 | xargs -0 ls -td | xargs -t -L 1 wandb sync --mark-synced
+}
+
+
+function wandb_parallel_sync_offline_runs() {
+    root_dir="$1"
+    find $root_dir -type d -name 'offline-run*' -print0 | xargs -0 ls -td | xargs -t -L 1 --max-procs 10 wandb sync --mark-synced --no-include-synced
+}
+
+function wandb_csync_offline_runs {
+    root_dir="$1"
+    while :
+    do
+        wandb_sync_offline_runs $root_dir
+        sleep 5m
+    done
+}
