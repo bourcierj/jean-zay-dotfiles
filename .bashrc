@@ -11,6 +11,8 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 # Force the Python stdout and stderr streams to be unbuffered
 export PYTHONUNBUFFERED=1
 
+export XDG_CACHE_HOME="$WORK/.cache/"
+
 ## Aliases
 # source: https://github.com/stas00/ml-engineering/blob/master/slurm/users.md
 
