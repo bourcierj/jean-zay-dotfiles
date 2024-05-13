@@ -3,7 +3,7 @@ set -eu
 
 ## Installs the AWS CLI
 
-source init_sw_paths.sh
+source init-sw-paths.sh
 
 # install AWS CLI v2 in $WORK/.local/aws-cli
 cd "$WORK"
