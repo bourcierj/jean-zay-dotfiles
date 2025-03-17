@@ -10,7 +10,7 @@ The `scripts` directory contains useful scripts to setup a work environment.
 
 * Initialize software paths by moving them to `$WORK`: `init-sw-paths.sh`; then re-source `.bashrc`
 * Install the AWS CLI: `install-aws-cli.sh`
-* Install miniconda: `aws-s3-sync.sh`
+* Install miniforge: `install-miniforge.sh`
 * Utility to repeat the submission of a job with sbatch: `sbatch-repeat.sh`
 
 ## Example slurm jobs
